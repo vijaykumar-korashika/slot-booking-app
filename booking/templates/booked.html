@@ -1,0 +1,17 @@
+<h2>Booked Slots</h2>
+
+<table border="1">
+
+<tr>
+<th>Slot Time</th>
+</tr>
+
+{% for slot in slots %}
+<tr>
+<td>{{slot.slot_time}}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+<a href="/">Back</a>

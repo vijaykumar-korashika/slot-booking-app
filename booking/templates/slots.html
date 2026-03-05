@@ -1,0 +1,33 @@
+<h2>Available Slots</h2>
+
+<table border="1">
+<tr>
+<th>Slot Time</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+{% for slot in slots %}
+<tr>
+
+<td>{{slot.slot_time}}</td>
+
+<td>
+{% if slot.is_booked %}
+Booked
+{% else %}
+Available
+{% endif %}
+</td>
+
+<td>
+{% if not slot.is_booked %}
+<a href="/book/{{slot.id}}/">Book</a>
+{% endif %}
+</td>
+
+</tr>
+{% endfor %}
+</table>
+
+<a href="/booked/">View Booked Slots</a>
